@@ -1,15 +1,23 @@
 import { useScrollPosition } from '../hooks/useScrollPosition';
+import { motion, useScroll, useTransform } from 'motion/react';
 
 const Navbar = () => {
   const scrollPosition = useScrollPosition();
   const isScrolled = scrollPosition > 50;
+  
+  const { scrollY } = useScroll();
+  // Muncul perlahan ketika scroll dari 0px sampai 200px (kebalikan dari Hero)
+  const profileOpacity = useTransform(scrollY, [0, 200], [0, 1]);
+  const profileScale = useTransform(scrollY, [0, 200], [0.5, 1]);
+  const profileWidth = useTransform(scrollY, [0, 200], ["0px", "40px"]);
+  const profileMargin = useTransform(scrollY, [0, 200], ["0px", "16px"]); // ml-4
 
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Works', href: '#works' },
     { name: 'Experience', href: '#experience' },
     { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Feedback', href: '#contact' },
   ];
 
   return (
@@ -25,8 +33,8 @@ const Navbar = () => {
           Dimas Ayyub Alghafiqi<span className="text-primary"></span>
         </a>
         
-        <div className="hidden md:flex items-center gap-8">
-          <nav className="flex gap-6">
+        <div className="flex items-center gap-6 md:gap-8">
+          <nav className="hidden md:flex gap-6 items-center">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
@@ -37,6 +45,25 @@ const Navbar = () => {
               </a>
             ))}
           </nav>
+          
+          {/* Profile Picture that appears gradually on scroll */}
+          <motion.div 
+            className="flex items-center origin-right overflow-hidden"
+            style={{ 
+              opacity: profileOpacity,
+              scale: profileScale,
+              width: profileWidth,
+              marginLeft: profileMargin
+            }}
+          >
+            <a href="#home" className="block w-10 h-10 flex-shrink-0 rounded-full overflow-hidden border-2 border-primary/50 hover:border-primary shadow-[0_0_15px_rgba(96,165,250,0.3)] transition-colors duration-300">
+              <img 
+                src="/dimas.jpeg" 
+                alt="Dimas Profile" 
+                className="w-full h-full object-cover"
+              />
+            </a>
+          </motion.div>
         </div>
       </div>
     </header>

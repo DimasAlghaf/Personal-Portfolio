@@ -1,7 +1,6 @@
 import SectionReveal from './SectionReveal';
 import { skills } from '../data/skills';
-import { ProgressiveBlur } from './ProgressiveBlur';
-
+import { SkillsCloud } from './SkillsCloud';
 const About = () => {
   const allSkills = skills.flatMap(group => group.items);
   return (
@@ -38,56 +37,8 @@ const About = () => {
                 </div>
                 </div>
                 
-                {/* Tech Stack Marquee (Scaled Down) */}
-                <div className="mt-8 relative w-full rounded-2xl border border-white/30 dark:border-primary/20 bg-white/60 dark:bg-[#050b14]/80 backdrop-blur-2xl shadow-[0_4px_16px_0_rgba(96,165,250,0.15)] overflow-hidden py-8 md:col-span-2">
-                  
-                  {/* Left Blur Overlay */}
-                  <ProgressiveBlur 
-                    direction="left" 
-                    className="absolute top-0 bottom-0 left-0 w-16 z-10 pointer-events-none" 
-                    blurLayers={8} 
-                    blurIntensity={1.5} 
-                  />
-
-                  {/* Marquee Container */}
-                  <div className="relative z-0 flex overflow-hidden">
-                    <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
-                      <div className="flex shrink-0 gap-6 px-4">
-                        {allSkills.map((skill, idx) => (
-                          <div key={`set1-${idx}`} className="flex flex-col items-center justify-center gap-2 group">
-                            <div className="w-16 h-16 rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#0f172a] flex items-center justify-center shadow-md hover:border-primary/50 hover:shadow-primary/20 transition-all duration-300 transform group-hover:-translate-y-1">
-                              <iconify-icon icon={skill.icon} class="text-3xl"></iconify-icon>
-                            </div>
-                            <span className="font-semibold text-[10px] text-text-light dark:text-text-dark group-hover:text-primary transition-colors">
-                              {skill.name}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="flex shrink-0 gap-6 px-4" aria-hidden="true">
-                        {allSkills.map((skill, idx) => (
-                          <div key={`set2-${idx}`} className="flex flex-col items-center justify-center gap-2 group">
-                            <div className="w-16 h-16 rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#0f172a] flex items-center justify-center shadow-md hover:border-primary/50 hover:shadow-primary/20 transition-all duration-300 transform group-hover:-translate-y-1">
-                              <iconify-icon icon={skill.icon} class="text-3xl"></iconify-icon>
-                            </div>
-                            <span className="font-semibold text-[10px] text-text-light dark:text-text-dark group-hover:text-primary transition-colors">
-                              {skill.name}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Blur Overlay */}
-                  <ProgressiveBlur 
-                    direction="right" 
-                    className="absolute top-0 bottom-0 right-0 w-16 z-10 pointer-events-none" 
-                    blurLayers={8} 
-                    blurIntensity={1.5} 
-                  />
-                </div>
-                
+                {/* Tech Stack Marquee with BorderBeam & Wave Text */}
+                <SkillsCloud />
               </div>
           </div>
         </SectionReveal>

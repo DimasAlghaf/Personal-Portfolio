@@ -6,7 +6,8 @@ export const skills = [
       { name: "JavaScript", icon: "devicon:javascript" },
       { name: "Tailwind CSS", icon: "devicon:tailwindcss" },
       { name: "HTML5", icon: "devicon:html5" },
-      { name: "CSS3", icon: "devicon:css3" }
+      { name: "CSS3", icon: "devicon:css3" },
+      { name: "Lua Script", icon: "devicon:lua" },
     ]
   },
   {
@@ -22,7 +23,7 @@ export const skills = [
       { name: "GitHub", icon: "devicon:github" },
       { name: "Vite", icon: "devicon:vitejs" },
       { name: "Figma", icon: "devicon:figma" },
-      { name: "VS Code", icon: "devicon:visual-studio-code" },
+      { name: "VS Code", icon: "devicon:vscode" },
       { name: "Postman", icon: "devicon:postman" },
       { name: "Google Colab", icon: "devicon:googlecolab" },
       

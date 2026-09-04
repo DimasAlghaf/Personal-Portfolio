@@ -1,6 +1,16 @@
 import SectionReveal from './SectionReveal';
+import { useScrollPosition } from '../hooks/useScrollPosition';
+import { motion, useScroll, useTransform } from 'motion/react';
 
 const Hero = () => {
+  const scrollPosition = useScrollPosition();
+  const isScrolled = scrollPosition > 50;
+  
+  const { scrollY } = useScroll();
+  // Fades out the image as the user scrolls down from 0px to 200px
+  const imageOpacity = useTransform(scrollY, [0, 200], [1, 0]);
+  const imageScale = useTransform(scrollY, [0, 200], [1, 0.8]);
+
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 pb-10">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -41,20 +51,31 @@ const Hero = () => {
             
             {/* Image Content */}
             <div className="w-full lg:w-2/5 flex justify-center lg:justify-end">
-              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-                {/* Decorative Elements */}
-                <div className="absolute inset-0 border-2 border-primary translate-x-4 translate-y-4 rounded-sm -z-10"></div>
-                <div className="absolute inset-0 bg-accent-bg backdrop-blur-3xl -translate-x-4 -translate-y-4 rounded-sm -z-20"></div>
+              <motion.div 
+                className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 group"
+                style={{ opacity: imageOpacity, scale: imageScale }}
+              >
+                {/* Animated Glow Behind */}
+                <div className="absolute inset-0 bg-primary/20 rounded-full md:rounded-[3rem] blur-3xl group-hover:bg-primary/40 group-hover:blur-2xl transition-all duration-700 ease-in-out -z-10"></div>
                 
-                {/* Photo Placeholder */}
-                <div className="w-full h-full overflow-hidden rounded-sm bg-gray-200 dark:bg-gray-800">
+                {/* Outer Glassmorphism Frame (Removed borders as requested) */}
+                <div className="absolute inset-[-12px] md:inset-[-16px] rounded-full md:rounded-[3.5rem] bg-white/5 dark:bg-[#050b14]/30 backdrop-blur-md -z-10 transition-transform duration-700 group-hover:scale-105 shadow-[0_0_30px_rgba(96,165,250,0.1)]"></div>
+                
+                {/* Image Wrapper */}
+                <div className="relative w-full h-full overflow-hidden rounded-full md:rounded-[3rem] bg-gray-200 dark:bg-[#0a101d] shadow-2xl transition-all duration-700 group-hover:scale-[1.02] group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_rgba(96,165,250,0.2)]">
                   <img 
                     src="/dimas.jpeg" 
                     alt="DIMAS_AYYUB_ALGHAFIQI" 
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover grayscale opacity-80 mix-blend-luminosity group-hover:mix-blend-normal group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
                   />
+                  {/* Subtle inner gradient for premium depth */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-white/20 pointer-events-none opacity-60 group-hover:opacity-20 transition-opacity duration-700"></div>
                 </div>
-              </div>
+                
+                {/* Floating Decorative Orbs */}
+                <div className="absolute -top-4 -right-4 w-16 h-16 md:w-24 md:h-24 bg-primary/40 rounded-full blur-xl animate-pulse pointer-events-none -z-20"></div>
+                <div className="absolute -bottom-6 -left-6 w-24 h-24 md:w-32 md:h-32 bg-blue-500/30 rounded-full blur-2xl animate-pulse [animation-delay:1s] pointer-events-none -z-20"></div>
+              </motion.div>
             </div>
             
           </div>
