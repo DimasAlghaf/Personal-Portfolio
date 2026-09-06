@@ -38,10 +38,10 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { name: "GitHub", icon: "mdi:github", href: "https://github.com/dimasalghaf" },
-    { name: "LinkedIn", icon: "mdi:linkedin", href: "https://www.linkedin.com/in/dimas-ayyub-alghafiqi/" },
-    { name: "Instagram", icon: "mdi:instagram", href: "https://instagram.com" },
-    { name: "Email", icon: "mdi:email-outline", href: "mailto:dimasalghaf@gmail.com" },
+    { name: "GitHub", icon: "mdi:github", href: "https://github.com/dimasalghaf", hoverColor: "hover:text-[#333333] dark:hover:text-white" },
+    { name: "LinkedIn", icon: "mdi:linkedin", href: "https://www.linkedin.com/in/dimas-ayyub-alghafiqi/", hoverColor: "hover:text-[#0A66C2]" },
+    { name: "Instagram", icon: "mdi:instagram", href: "https://instagram.com", hoverColor: "hover:text-[#E1306C]" },
+    { name: "Email", icon: "mdi:email-outline", href: "mailto:dimasalghaf@gmail.com", hoverColor: "hover:text-[#EA4335]" },
   ];
 
   return (
@@ -66,7 +66,7 @@ export default function Footer() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+              className={`text-gray-500 dark:text-gray-400 ${social.hoverColor} transition-colors`}
               title={social.name}
               whileHover={{ scale: 1.15, rotate: index % 2 === 0 ? 12 : -12, y: -3 }}
               whileTap={{ scale: 0.95, rotate: 0 }}
