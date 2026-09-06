@@ -1,5 +1,14 @@
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import { motion, useScroll, useTransform } from 'motion/react';
+import { RandomLetterSwap } from "./ui/random-letter-swap"; // Adjusted to relative path to avoid @/ alias issues if not configured, but keeping the exact component usage.
+
+const links = [
+  { name: "Home", href: "#home" },
+  { name: "Work", href: "#works" },
+  { name: "About", href: "#about" },
+  { name: "Resume", href: "#resume" },
+  { name: "Feedback", href: "#contact" }
+];
 
 const Navbar = () => {
   const scrollPosition = useScrollPosition();
@@ -11,14 +20,6 @@ const Navbar = () => {
   const profileScale = useTransform(scrollY, [0, 200], [0.5, 1]);
   const profileWidth = useTransform(scrollY, [0, 200], ["0px", "40px"]);
   const profileMargin = useTransform(scrollY, [0, 200], ["0px", "16px"]); // ml-4
-
-  const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Works', href: '#works' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Services', href: '#services' },
-    { name: 'Feedback', href: '#contact' },
-  ];
 
   return (
     <header 
@@ -34,18 +35,18 @@ const Navbar = () => {
         </a>
         
         <div className="flex items-center gap-6 md:gap-8">
-          <nav className="hidden md:flex gap-6 items-center">
-            {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href}
-                className="text-sm font-medium hover:text-primary transition-colors duration-200"
-              >
-                {link.name}
+          <nav className="hidden md:flex items-center gap-8">
+            {links.map((link) => (
+              <a href={link.href} key={link.name}>
+                <RandomLetterSwap
+                  className="cursor-pointer font-medium text-muted-foreground text-sm hover:text-foreground"
+                  label={link.name}
+                  staggerDuration={0.025}
+                  transition={{ duration: 0.6, type: "spring" }}
+                />
               </a>
             ))}
           </nav>
-          
           {/* Profile Picture that appears gradually on scroll */}
           <motion.div 
             className="flex items-center origin-right overflow-hidden"

@@ -13,7 +13,7 @@ export const projects = [
     description: "A modern and responsive personal portfolio website designed to showcase my skills, projects, and experience.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
     category: "Frontend",
-    technologies: ["React", "JavaScript", "Tailwind"]
+    technologies: ["React", "Vite", "Tailwind CSS", "EmailJS", "Framer Motion"]
   },
   {
     id: 3,

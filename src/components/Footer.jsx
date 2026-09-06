@@ -44,53 +44,19 @@ export default function Footer() {
     { name: "Email", icon: "mdi:email-outline", href: "mailto:dimasalghaf@gmail.com" },
   ];
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
-    { name: "Feedback", href: "#contact" },
-  ];
-
   return (
-    <footer className="w-full py-12 bg-transparent overflow-hidden border-t border-border-light dark:border-border-dark relative z-10">
+    <footer className="w-full py-6 bg-transparent overflow-hidden border-t border-border-light dark:border-border-dark relative z-10">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "0px 0px -100px 0px" }}
         variants={containerVariants}
-        className="container mx-auto px-4 flex flex-col items-center gap-10 mb-12"
+        className="container mx-auto px-4 flex flex-col items-center gap-6 mb-6"
       >
         {/* Logo */}
         <motion.div variants={itemVariants} className="flex justify-center">
           <Logo />
         </motion.div>
-
-        {/* Navigation Links */}
-        <motion.nav
-          variants={itemVariants}
-          className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-base font-medium relative z-10"
-        >
-          {navLinks.map((item) => (
-            <motion.a
-              key={item.name}
-              href={item.href}
-              className="relative px-3 py-1.5 group text-gray-500 dark:text-gray-400"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10 group-hover:text-primary transition-colors duration-300">
-                {item.name}
-              </span>
-              <motion.span
-                className="absolute inset-0 bg-primary/10 dark:bg-primary/20 rounded-md -z-0 origin-center"
-                initial={{ scale: 0, opacity: 0 }}
-                whileHover={{ scale: 1, opacity: 1 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              />
-            </motion.a>
-          ))}
-        </motion.nav>
 
         {/* Social Media Icons */}
         <motion.div variants={itemVariants} className="flex gap-6 items-center">
@@ -125,7 +91,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <motion.div
-        className="container mx-auto px-4 mt-8 flex flex-col md:flex-row items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-500"
+        className="container mx-auto px-4 mt-4 flex flex-col md:flex-row items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-500"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

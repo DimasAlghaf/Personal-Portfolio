@@ -63,10 +63,17 @@ const Hero = () => {
                 
                 {/* Image Wrapper */}
                 <div className="relative w-full h-full overflow-hidden rounded-full md:rounded-[3rem] bg-gray-200 dark:bg-[#0a101d] shadow-2xl transition-all duration-700 group-hover:scale-[1.02] group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_rgba(96,165,250,0.2)]">
+                  {/* First Image - Fades out on hover */}
                   <img 
                     src="/dimas.jpeg" 
-                    alt="DIMAS_AYYUB_ALGHAFIQI" 
-                    className="w-full h-full object-cover grayscale opacity-80 mix-blend-luminosity group-hover:mix-blend-normal group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
+                    alt="DIMAS_AYYUB_ALGHAFIQI_1" 
+                    className="absolute inset-0 w-full h-full object-cover grayscale opacity-80 mix-blend-luminosity group-hover:opacity-0 group-hover:scale-110 transition-all duration-700 ease-out"
+                  />
+                  {/* Second Image - Fades in on hover */}
+                  <img 
+                    src="/dimas2.jpeg" 
+                    alt="DIMAS_AYYUB_ALGHAFIQI_2" 
+                    className="absolute inset-0 w-full h-full object-cover opacity-0 scale-100 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
                   />
                   {/* Subtle inner gradient for premium depth */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-white/20 pointer-events-none opacity-60 group-hover:opacity-20 transition-opacity duration-700"></div>
