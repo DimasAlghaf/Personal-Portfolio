@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0077b5&height=200&section=header&text=Dimas%20Ayyub%20Alghafiqi&fontSize=50&animation=fadeIn&fontAlignY=38&desc=Frontend%20Developer%20%7C%20Creative%20Coder&descAlignY=55&descAlign=50" alt="Header" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0077b5&height=200&section=header&text=Dimas%20Ayyub%20Alghafiqi&fontSize=50&animation=fadeIn&fontAlignY=38&desc=Website%20Developer%20%7C%20Creative%20Coder&descAlignY=55&descAlign=50" alt="Header" />
   
   <br />
   
@@ -42,7 +42,6 @@ This isn't your standard static page. Here is the magic happening behind the sce
 - 🌌 **Immersive Effects:** Custom `ParticleDrift` backgrounds and a `LoaderGlitchText` create a dynamic, futuristic feel.
 - 🪞 **Glassmorphism UI:** Elegant, translucent blurs on the navbar that adapt seamlessly as you scroll down the page.
 - 🛹 **Silky Smooth Scrolling:** Integrated with `Lenis` to override the clunky native browser scroll, giving visitors a premium gliding experience.
-- 🌗 **Adaptive Theming:** Flawless Dark/Light mode transitions tailored for any eye preference.
 - 📨 **Direct-to-Inbox Contact:** Built-in form using `@emailjs/browser`—visitors can email me directly without leaving the site.
 
 ---
