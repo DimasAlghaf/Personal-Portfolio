@@ -65,7 +65,7 @@ const Hero = () => {
                 <div className="relative w-full h-full overflow-hidden rounded-full md:rounded-[3rem] bg-gray-200 dark:bg-[#0a101d] shadow-2xl transition-all duration-700 group-hover:scale-[1.02] group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_rgba(96,165,250,0.2)]">
                   {/* First Image - Fades out on hover */}
                   <img 
-                    src="/dimas.jpeg" 
+                    src="/dimas.png" 
                     alt="DIMAS_AYYUB_ALGHAFIQI_1" 
                     className="absolute inset-0 w-full h-full object-cover grayscale opacity-80 mix-blend-luminosity group-hover:opacity-0 group-hover:scale-110 transition-all duration-700 ease-out"
                   />

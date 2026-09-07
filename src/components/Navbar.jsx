@@ -4,8 +4,8 @@ import { RandomLetterSwap } from "./ui/random-letter-swap"; // Adjusted to relat
 
 const links = [
   { name: "Home", href: "#home" },
-  { name: "Work", href: "#works" },
   { name: "About", href: "#about" },
+  { name: "Project/Certificates", href: "#works" },
   { name: "Experience", href: "#resume" },
   { name: "Feedback", href: "#contact" }
 ];
@@ -31,7 +31,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
         <a href="#" className="text-xl font-bold tracking-tighter hover:text-primary transition-colors">
-          Dimas Ayyub Alghafiqi<span className="text-primary"></span>
+          DIMAS<span className="text-primary"></span>
         </a>
         
         <div className="flex items-center gap-6 md:gap-8">
@@ -59,7 +59,7 @@ const Navbar = () => {
           >
             <a href="#home" className="block w-10 h-10 flex-shrink-0 rounded-full overflow-hidden border-2 border-primary/50 hover:border-primary shadow-[0_0_15px_rgba(96,165,250,0.3)] transition-colors duration-300">
               <img 
-                src="/dimas.jpeg" 
+                src="/dimas.png" 
                 alt="Dimas Profile" 
                 className="w-full h-full object-cover"
               />
