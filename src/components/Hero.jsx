@@ -71,7 +71,7 @@ const Hero = () => {
                   />
                   {/* Second Image - Fades in on hover */}
                   <img 
-                    src="/dimas2.jpeg" 
+                    src="/dimas3.jpeg" 
                     alt="DIMAS_AYYUB_ALGHAFIQI_2" 
                     className="absolute inset-0 w-full h-full object-cover opacity-0 scale-100 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
                   />
