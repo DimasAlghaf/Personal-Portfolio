@@ -41,7 +41,7 @@ export default function Footer() {
     { name: "GitHub", icon: "mdi:github", href: "https://github.com/dimasalghaf", hoverColor: "hover:text-[#333333] dark:hover:text-white" },
     { name: "LinkedIn", icon: "mdi:linkedin", href: "https://www.linkedin.com/in/dimas-ayyub-alghafiqi/", hoverColor: "hover:text-[#0A66C2]" },
     { name: "Instagram", icon: "mdi:instagram", href: "https://instagram.com", hoverColor: "hover:text-[#E1306C]" },
-    { name: "Email", icon: "mdi:email-outline", href: "mailto:dimasalghaf@gmail.com", hoverColor: "hover:text-[#EA4335]" },
+    { name: "Email", icon: "mdi:email-outline", href: "https://mail.google.com/mail/?view=cm&fs=1&to=dimasalghaf@gmail.com", hoverColor: "hover:text-[#EA4335]" },
   ];
 
   return (

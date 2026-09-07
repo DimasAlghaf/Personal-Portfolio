@@ -35,7 +35,7 @@ const Projects = () => {
   }, [selectedProject, selectedCert]);
 
   return (
-    <section id="works" className="py-24 bg-transparent relative z-10">
+    <section id="works" className="py-24 bg-transparent relative z-40">
       <div className="container mx-auto px-6 max-w-6xl">
         <SectionReveal>
           <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
