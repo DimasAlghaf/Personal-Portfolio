@@ -59,7 +59,7 @@ const Navbar = () => {
           >
             <a href="#home" className="block w-10 h-10 flex-shrink-0 rounded-full overflow-hidden border-2 border-primary/50 hover:border-primary shadow-[0_0_15px_rgba(96,165,250,0.3)] transition-colors duration-300">
               <img 
-                src="/dimas.png" 
+                src="https://res.cloudinary.com/rg4bvkve/image/upload/v1788850064/dimas.png" 
                 alt="Dimas Profile" 
                 className="w-full h-full object-cover"
               />
